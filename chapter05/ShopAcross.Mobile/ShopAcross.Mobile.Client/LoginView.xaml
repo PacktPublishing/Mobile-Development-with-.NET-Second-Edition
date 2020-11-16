@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopAcross.Mobile.Client.LoginView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+Padding="20">
+            <Label Text="Username" />
+            <Entry x:Name="usernameEntry" Placeholder="username" Text="{Binding UserName, Mode=OneWayToSource}" />
+            <Label Text="Password" />
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="password" Text="{Binding Password, Mode=OneWayToSource}" />
+            <Button x:Name="loginButton" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label x:Name="messageLabel" Text="{Binding Result}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
