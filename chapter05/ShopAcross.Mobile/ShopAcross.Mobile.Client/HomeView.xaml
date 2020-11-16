@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Title="Home"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    ControlTemplate="{StaticResource PageTemplate}" 
+    x:Class="ShopAcross.Mobile.Client.HomeView">
+    <ContentPage.ToolbarItems>
+         <!-- Removed for brevity -->
+        <ToolbarItem Text="Recent" Clicked="RecentItems_Clicked" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+             <Image Source="xamarin.png"/>
+             <Label 
+                 Text="Custom Title View" 
+                 FontSize="16" 
+                 TextColor="Black" 
+                 VerticalTextAlignment="Center" />
+         </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+<ListView ItemTapped="Handle_ItemTapped" ItemsSource="{Binding RecentProducts}" SeparatorVisibility="None">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+<ViewCell>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition /><RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60" /><ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.RowSpan="2" Grid.Column="0" Margin="5,5"
+            Source="{Binding Image}" />
+        <Label
+            Grid.Row="0" Grid.Column="1" Font="Small"
+            Text="{Binding Title}" VerticalTextAlignment="End" />
+        <Label
+            Grid.Row="1" Grid.Column="1"
+            Text="{Binding Description}" VerticalTextAlignment="Start" />
+    </Grid>
+    <ViewCell.ContextActions>
+        <ToolbarItem Text="Edit" />
+        <ToolbarItem IsDestructive="true" Text="Delete" />
+    </ViewCell.ContextActions>
+</ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+ </ListView>
+    </ContentPage.Content>
+</ContentPage>
