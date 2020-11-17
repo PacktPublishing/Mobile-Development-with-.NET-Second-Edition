@@ -15,15 +15,16 @@ namespace ShopAcross.Mobile.Client
 
         private void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var itemView = new ProductDeatilsView();
+            var itemView = new ProductDetailsView();
             itemView.BindingContext = e.Item;
             Navigation.PushAsync(itemView);
         }
 
-private void RecentItems_Clicked(object sender, EventArgs e)
+private async void RecentItems_Clicked(object sender, EventArgs e)
 {
-    var recentProducts = new RecentProductsView();
-    Navigation.PushAsync(recentProducts);
+    //var recentProducts = new RecentProductsView();
+            await Shell.Current.GoToAsync("//recent");
+    //Navigation.PushAsync(recentProducts);
 }
     }
 }

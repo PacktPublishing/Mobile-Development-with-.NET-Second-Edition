@@ -24,29 +24,25 @@
 <ListView ItemTapped="Handle_ItemTapped" ItemsSource="{Binding RecentProducts}" SeparatorVisibility="None">
     <ListView.ItemTemplate>
         <DataTemplate>
-<ViewCell>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition /><RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60" /><ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Image
-            Grid.RowSpan="2" Grid.Column="0" Margin="5,5"
-            Source="{Binding Image}" />
-        <Label
-            Grid.Row="0" Grid.Column="1" Font="Small"
-            Text="{Binding Title}" VerticalTextAlignment="End" />
-        <Label
-            Grid.Row="1" Grid.Column="1"
-            Text="{Binding Description}" VerticalTextAlignment="Start" />
-    </Grid>
-    <ViewCell.ContextActions>
-        <ToolbarItem Text="Edit" />
-        <ToolbarItem IsDestructive="true" Text="Delete" />
-    </ViewCell.ContextActions>
-</ViewCell>
+            <ViewCell>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition /><RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" /><ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.RowSpan="2" Grid.Column="0" Margin="5,5"
+                        Source="{Binding Image}" />
+                    <Label
+                        Grid.Row="0" Grid.Column="1" Font="Small"
+                        Text="{Binding Title}" VerticalTextAlignment="End" />
+                    <Label
+                        Grid.Row="1" Grid.Column="1"
+                        Text="{Binding Description}" VerticalTextAlignment="Start" />
+                </Grid>
+            </ViewCell>
         </DataTemplate>
     </ListView.ItemTemplate>
  </ListView>

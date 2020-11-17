@@ -5,7 +5,8 @@
          <StackLayout>
              <ListView 
                  x:Name="listView" 
-                 ItemsSource="{Binding .}" 
+                 ItemsSource="{Binding .}"
+                 ItemTapped="Handle_ItemTapped"
                  SeparatorVisibility="None">
                  <ListView.ItemTemplate>
                      <DataTemplate>
