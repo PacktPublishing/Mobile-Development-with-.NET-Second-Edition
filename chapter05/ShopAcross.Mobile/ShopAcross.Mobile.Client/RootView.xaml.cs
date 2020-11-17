@@ -22,6 +22,28 @@ namespace ShopAcross.Mobile.Client
 
             BindingContext = list;
         }
+
+        private void Handle_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+    if (e.Item is NavigationItem item)
+    {
+        Page detailPage = null;
+
+        if(item.Id == 1)
+        {
+            detailPage = new SettingsView();
+        }
+        else
+        {
+            detailPage = new HomeView();
+        }
+
+        Detail = new NavigationPage(detailPage);
+
+        IsPresented = false;
+    }
+
+        }
     }
 
 public class NavigationItem

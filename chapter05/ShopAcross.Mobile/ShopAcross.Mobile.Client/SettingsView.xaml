@@ -28,6 +28,7 @@
                 </x:Array>
             </ListView.ItemsSource>
         </ListView>
+        <Button Text="Back to Home" Clicked="Button_Clicked" />
     </StackLayout>
 </ContentPage.Content>
 </ContentPage>

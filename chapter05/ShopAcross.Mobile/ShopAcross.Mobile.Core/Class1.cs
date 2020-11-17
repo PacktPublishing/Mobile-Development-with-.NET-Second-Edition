@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -22,6 +23,8 @@ public class ProductViewModel : BaseBindableObject
     public string Description { get; set; }
 
     public string Image { get; set; }
+
+        public DateTime ReleaseData { get; set; }
 }
 
 public class HomeViewModel: BaseBindableObject

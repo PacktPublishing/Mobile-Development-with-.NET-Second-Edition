@@ -3,10 +3,11 @@
      xmlns="http://xamarin.com/schemas/2014/forms" 
      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
      xmlns:local="using:ShopAcross.Mobile.Client"
-     x:Class="ShopAcross.Mobile.Client.RecentProducts">
-     <CarouselPage.Children>
-         <local:HomeView BindingContext="{Binding .}" Icon="xamarin.png"/>      
+     x:Class="ShopAcross.Mobile.Client.RecentProductsView">
+     <CarouselPage.Children>     
          <local:ProductDetailsView BindingContext="{Binding RecentProducts[0]}" Title="First" Icon="xamarin.png"/>
+         <local:ProductDetailsView BindingContext="{Binding RecentProducts[1]}" Title="Second" Icon="xamarin.png"/>
+         <local:ProductDetailsView BindingContext="{Binding RecentProducts[2]}" Title="Third" Icon="xamarin.png"/>
      </CarouselPage.Children>
  </CarouselPage>
 

@@ -1,20 +1,26 @@
 ﻿using System;
-
+using System.Globalization;
 using Xamarin.Forms;
 
 namespace ShopAcross.Mobile.Client.Converters
 {
-    public class DataFormatConverter : ContentPage
+    public class DateFormatConverter : IValueConverter
     {
-        public DataFormatConverter()
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Content = new StackLayout
+            if (value is DateTime date)
             {
-                Children = {
-                    new Label { Text = "Hello ContentPage" }
-                }
-            };
+                return date.ToShortDateString();
+            }
+
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
+
 }
 
