@@ -128,16 +128,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopAcross.Mobile.Client\ShopAcross.Mobile.Client.csproj">
-      <Project>{6B66F64C-9F1D-43C3-B145-FCE53ADD628D}</Project>
+      <Project>{8BDBD75F-AC05-472A-9D13-1DB405C4A67F}</Project>
       <Name>ShopAcross.Mobile.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShopAcross.Mobile.Core\ShopAcross.Mobile.Core.csproj">
-      <Project>{4765AF22-C577-4BA6-A59A-A87518EE2A04}</Project>
+      <Project>{901EB2A5-35FA-4767-92DD-CA20C946AC5A}</Project>
       <Name>ShopAcross.Mobile.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\xamarin.png" />
+    <BundleResource Include="Resources\slideout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

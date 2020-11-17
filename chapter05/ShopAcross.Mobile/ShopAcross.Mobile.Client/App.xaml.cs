@@ -9,7 +9,7 @@ namespace ShopAcross.Mobile.Client
 public App()
 {
     InitializeComponent();
-    MainPage = new NavigationPage(new HomeView());
+    MainPage = new RootView();
 }
 
         protected override void OnStart()

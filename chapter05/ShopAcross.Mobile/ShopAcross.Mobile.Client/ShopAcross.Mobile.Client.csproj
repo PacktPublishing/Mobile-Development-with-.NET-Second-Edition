@@ -17,4 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ShopAcross.Mobile.Core\ShopAcross.Mobile.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
 </Project>

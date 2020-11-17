@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Settings" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ShopAcross.Mobile.Client.SettingsView">
+<ContentPage.Content>
+    <StackLayout Orientation="Vertical" Padding="10">
+        <Label Text="Selected Categories" FontSize="Title" />
+        <ListView>
+<ListView.ItemTemplate>
+    <DataTemplate>
+        <ViewCell>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Switch Grid.Column="0" />
+                <Label Text="{Binding .}" VerticalTextAlignment="Center" FontSize="Subtitle" Grid.Column="1"/>
+            </Grid>
+        </ViewCell>
+    </DataTemplate>
+</ListView.ItemTemplate>
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>computers</x:String>
+                    <x:String>white furniture</x:String>
+                    <x:String>gadgets</x:String>
+                    <x:String>car electronics</x:String>
+                    <x:String>iot</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>
+</ContentPage>
