@@ -1,0 +1,11 @@
+﻿.ChipContainerClass {
+    border-radius: 7;
+    padding: 3;
+    margin: 3;
+}
+
+.ChipLabelClass {
+    text-align: center;
+    vertical-align: central;
+    color: white;
+}

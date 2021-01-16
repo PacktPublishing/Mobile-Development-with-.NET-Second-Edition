@@ -21,6 +21,19 @@
                         VerticalOptions="Center" />
              </Grid>
          </ControlTemplate>
+         <Style TargetType="Frame">
+             <Setter Property="HasShadow" Value="false" />
+        </Style>
+        <Style TargetType="Frame" x:Key="ChipContainer">
+             <Setter Property="CornerRadius" Value="7" />
+             <Setter Property="Padding" Value="3" />
+             <Setter Property="Margin" Value="3" />
+         </Style>
+         <Style TargetType="Label" x:Key="ChipLabel">
+             <Setter Property="VerticalTextAlignment" Value="Center" />
+             <Setter Property="HorizontalTextAlignment" Value="Center" />
+             <Setter Property="TextColor" Value="White" />
+         </Style> 
      </ResourceDictionary>
  </Application.Resources> 
 </Application>

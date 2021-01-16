@@ -11,7 +11,7 @@ public App()
     InitializeComponent();
             //MainPage = new NavigationPage(new HomeView());
             //MainPage = new RootTabbedView();
-    MainPage = new RootView();
+    MainPage = new LoginView();
     //MainPage = new AppShell();
 }
 

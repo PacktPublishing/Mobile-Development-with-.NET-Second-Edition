@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:ShopAcross.Mobile.Client.Behaviors"
+             xmlns:extensions="clr-namespace:ShopAcross.Mobile.Client.Extensions" xmlns:controls="clr-namespace:ShopAcross.Mobile.Client.Controls"
+             x:Name="Root"
+             x:Class="ShopAcross.Mobile.Client.LoginView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+Padding="20">
+            <!--<Label Text="{extensions:Translate LblUsername}" />
+            <Entry x:Name="usernameEntry" Placeholder="username"
+                   Text="{Binding UserName, Mode=OneWayToSource}" >
+             <Entry.Behaviors>
+                 <behaviors:ValidationBehavior x:Name="UserNameValidation" 
+                     ValidationRule="{Binding BindingContext.UserNameValidation, Source={x:Reference Root}}" />
+             </Entry.Behaviors>
+            
+            </Entry>
+            -->
+            <controls:ValidatableEntry 
+                Label="{extensions:Translate LblUsername}" 
+                Placeholder="{extensions:Translate LblUsername}" 
+                ValidationRule="{Binding UserNameValidation}"
+                Value="{Binding UserName, Mode=OneWayToSource}"/> 
+
+            <!--<Label Text="{extensions:Translate LblRequiredError}" /> -->
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="password" Text="{Binding Password, Mode=OneWayToSource}" />
+            <Button x:Name="loginButton" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label x:Name="messageLabel" Text="{Binding Result}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

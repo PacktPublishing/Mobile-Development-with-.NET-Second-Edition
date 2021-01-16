@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopAcross.Mobile.Client"
+    xmlns:core="clr-namespace:ShopAcross.Mobile.Core;assembly=ShopAcross.Mobile.Core"
+    x:Class="ShopAcross.Mobile.Client.RootTabbedView">
+    <TabbedPage.BindingContext>
+        <core:HomeViewModel />
+    </TabbedPage.BindingContext>
+    <!--Pages can be added as references or inline-->
+     <TabbedPage.Children>
+         <NavigationPage Title="Home" Icon="xamarin.png">
+            <x:Arguments>
+                <local:HomeView BindingContext="{Binding .}" />
+            </x:Arguments>
+          </NavigationPage>
+         <NavigationPage Title="Settings" Icon="xamarin.png">
+            <x:Arguments>
+                <local:SettingsView/>
+            </x:Arguments>
+          </NavigationPage>
+     </TabbedPage.Children>
+</TabbedPage>

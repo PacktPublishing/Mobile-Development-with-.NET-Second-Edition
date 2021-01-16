@@ -1,33 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace ShopAcross.Mobile.Core
 {
-public class BaseBindableObject : INotifyPropertyChanged
-{
-    public event PropertyChangedEventHandler PropertyChanged;
 
-    protected void SendPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
-
-public class ProductViewModel : BaseBindableObject
-{
-    public string Title { get; set; }
-
-    public string Description { get; set; }
-
-    public string Image { get; set; }
-
-        public DateTime ReleaseData { get; set; }
-}
-
-public class HomeViewModel: BaseBindableObject
+    public class HomeViewModel: BaseBindableObject
 {
     public HomeViewModel()
     {
@@ -40,7 +17,8 @@ public class HomeViewModel: BaseBindableObject
     {
         yield return new ProductViewModel {
             Title = "First Item",
-            Description = "First Item short description",
+            IsHtml = true,
+            Description = "<b/>Here</b> is some <u>HTML</u>;",
             Image = "https://picsum.photos/800?image=0" };
 
             //... Removed for brevity
