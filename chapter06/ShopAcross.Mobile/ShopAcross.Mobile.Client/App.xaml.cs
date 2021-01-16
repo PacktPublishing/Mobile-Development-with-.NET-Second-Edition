@@ -6,14 +6,14 @@ namespace ShopAcross.Mobile.Client
 {
     public partial class App : Application
     {
-        public App()
-        {
-            InitializeComponent();
+public App()
+{
+    InitializeComponent();
             //MainPage = new NavigationPage(new HomeView());
             //MainPage = new RootTabbedView();
-            //MainPage = new RootView();
-            MainPage = new AppShell();
-        }
+    MainPage = new LoginView();
+    //MainPage = new AppShell();
+}
 
         protected override void OnStart()
         {

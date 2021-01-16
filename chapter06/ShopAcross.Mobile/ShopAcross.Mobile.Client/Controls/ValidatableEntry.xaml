@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:ShopAcross.Mobile.Client.Behaviors" xmlns:controls="clr-namespace:ShopAcross.Mobile.Client.Controls"
+             x:Class="ShopAcross.Mobile.Client.Controls.ValidatableEntry"
+             x:Name="RootView">
+    <ContentView.Content>
+        <StackLayout>
+            <ContentView>
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="iOS">
+                        <Label Text="{Binding Label, Source={x:Reference RootView}}" />
+                    </On>
+                </OnPlatform>
+            </ContentView>
+            <controls:FloatingLabelEntry
+                Placeholder="{Binding Placeholder, Source={x:Reference RootView}}"
+                Text="{Binding Value, Mode=OneWayToSource, Source={x:Reference RootView}}"
+                ErrorMessage="{Binding ValidationRule.ValidationMessage, Source={x:Reference RootView}}"
+                HasError="{Binding HasError, Source={x:Reference ValidationBehavior}}">
+                <Entry.Behaviors>
+                    <behaviors:ValidationBehavior x:Name="ValidationBehavior" 
+                              ValidationRule="{Binding ValidationRule, Source={x:Reference RootView}}" />
+                </Entry.Behaviors>
+            </controls:FloatingLabelEntry>
+                        <ContentView>
+                <OnPlatform x:TypeArguments="View">
+                    <On Platform="iOS">
+                        <Label Text="{Binding ValidationRule.ValidationMessage, Source={x:Reference RootView}}" FontSize="12"
+                               TextColor="Gray" IsVisible="{Binding HasError, Source={x:Reference ValidationBehavior}}"/>
+                     </On>
+                </OnPlatform>
+            </ContentView>
+        </StackLayout> 
+    </ContentView.Content>
+</ContentView>

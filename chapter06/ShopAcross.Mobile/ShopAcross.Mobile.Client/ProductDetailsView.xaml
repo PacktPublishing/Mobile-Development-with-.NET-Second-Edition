@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:ShopAcross.Mobile.Client.Converters"
+    xmlns:effects="clr-namespace:ShopAcross.Mobile.Client.Effects"
+    xmlns:extensions="clr-namespace:ShopAcross.Mobile.Client.Extensions"
+    x:Class="ShopAcross.Mobile.Client.ProductDetailsView"
+    >
+    <ContentPage.Resources>
+        <converters:DateFormatConverter x:Key="DateFormatConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="10" Orientation="Vertical" Spacing="10">
+            <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand" />
+            <FlexLayout Direction="Row" Wrap="Wrap">
+                <Frame 
+                    IsVisible="{Binding HasFeature1}" 
+                    BackgroundColor="Gray" 
+                    CornerRadius="7" 
+                    Padding="3" 
+                    Margin="4" 
+                    HasShadow="false">
+                    <Label Text="Feature 1" Margin="4" VerticalTextAlignment="Center" />
+                </Frame>
+                <Frame 
+                    IsVisible="{Binding HasFeature1}" 
+                    BackgroundColor="Lime" 
+                    CornerRadius="7" 
+                    Padding="3" 
+                    Margin="4" 
+                    HasShadow="false">
+                    <Label Text="Feat. 2" Margin="4" VerticalTextAlignment="Center" />
+                </Frame>
+                <!-- Additional Labels -->
+             </FlexLayout>
+            <Label Text="{Binding Title, Mode=OneTime}" FontSize="Large" />
+            <Label Text="{Binding ReleaseDate, Converter={StaticResource DateFormatConverter}}" />
+            <!--<Label Text="{Binding Description}" >
+            <Label.Effects>
+                <effects:HtmlTextEffect HtmlText="&lt;b&gt;Here&lt;/b&gt; is some &lt;u&gt;HTML&lt;/u&gt;" />
+            </Label.Effects>
+            </Label>--> 
+            <Label Text="{Binding Description}" extensions:HtmlText.IsHtml="{Binding IsHtml}" /> 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Specification 1" 
+                    Grid.Column="0" Grid.Row="0"/>
+                <Label Text="Value for Specification" 
+                    Grid.Column="1" Grid.Row="0" TextColor="Gray"/>
+                <Label Text="Another Spec." 
+                    Grid.Column="0" Grid.Row="1" />
+                <Label Text="Value for Specification that is a little
+                longer" Grid.Column="1" Grid.Row="1" TextColor="Gray"/>
+                <!-- Additional Specs go here -->
+            </Grid>
+
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
