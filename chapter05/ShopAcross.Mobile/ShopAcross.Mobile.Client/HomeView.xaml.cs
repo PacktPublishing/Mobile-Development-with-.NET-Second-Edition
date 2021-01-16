@@ -20,11 +20,12 @@ namespace ShopAcross.Mobile.Client
             Navigation.PushAsync(itemView);
         }
 
-private async void RecentItems_Clicked(object sender, EventArgs e)
-{
-    var recentProducts = new RecentProductsView();
-    //        await Shell.Current.GoToAsync("//recent");
-    Navigation.PushAsync(recentProducts);
-}
+        private async void RecentItems_Clicked(object sender, EventArgs e)
+        {
+            //var recentProducts = new RecentProductsView();
+                    await Shell.Current.GoToAsync("//recent");
+            //Navigation.PushAsync(recentProducts);
+
+        }
     }
 }
