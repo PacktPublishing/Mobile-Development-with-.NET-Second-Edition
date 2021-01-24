@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.5.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="5.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopAcross.Web.Data\ShopAcross.Web.Data.csproj" />
+    <ProjectReference Include="..\ShopAcross.Web.Repository.Cosmos\ShopAcross.Web.Repository.Cosmos.csproj" />
+  </ItemGroup>
+
+</Project>
