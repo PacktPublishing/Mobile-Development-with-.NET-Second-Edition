@@ -94,7 +94,7 @@ namespace calculator.console
                         return number1 + number2;
                     case '-':
                         return number1 - number2;
-                    case 'x':
+                    case '*':
                         return number1 * number2;
                     case '/':
                         return number1 / number2;
